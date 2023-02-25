@@ -1,4 +1,4 @@
-package org.example.comparate;
+package org.example.comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,7 +19,6 @@ public class Test2 {
         Collections.sort(employeeList);
         System.out.println("After sorting \n " + employeeList);
     }
-
 }
 
 class Employee implements Comparable<Employee>{
@@ -47,6 +46,7 @@ class Employee implements Comparable<Employee>{
 
     @Override
     public int compareTo(Employee anotherEmp) {
+        //Classical method
         if (this.id == anotherEmp.id){
             return 0;
         }
@@ -57,4 +57,14 @@ class Employee implements Comparable<Employee>{
             return 1;
         }
     }
+
+    //Another method
+    // return this.id - anotherEmp.id;
+
+    // If need compare by two field
+    // int res = this.name.compareTo(another.name);
+    // if (res == 0){
+    //   res = this.surname.compareTo(another.surname);
+    //   }
+    // return res;
 }
